@@ -7,10 +7,17 @@ using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
+
+
+
 namespace AutobotsGoAhead
 {
+    
     internal class Program
     {
+
+       
+
         static async Task  Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
@@ -44,11 +51,10 @@ namespace AutobotsGoAhead
         
         }
 
-      
 
 
 
-        static List<string> previousMessages = new List<string>(); // Статический список для хранения сообщений
+            static List<string> previousMessages = new List<string>(); // Статический список для хранения сообщений
         static async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {
 
@@ -64,7 +70,7 @@ namespace AutobotsGoAhead
 
             Console.WriteLine($"Received a'{messageText}' message in chat '{chatId}'.");
 
-          
+            
 
 
 
@@ -134,28 +140,33 @@ namespace AutobotsGoAhead
 
 
 
+        
 
-
+            List<string> Stikers = new List<string>
+            {
+                "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(1).webp",
+                "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(2).webp",
+                "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(3).webp",
+                "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(4).webp",
+                "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(5).webp",
+                
+               
+                // добавьте URL-адреса других изображений...
+            };
 
 
 
 
             if (message.Text == "Стикер")
             {
-                var stickers = Directory.GetFiles("https://github.com/YourSneakyLiar/BoopBot", "*.webp"); // Загрузите все файлы .webp из репозитория
-
                 Random random = new Random();
-                int index = random.Next(stickers.Length); // Выберите случайный стикер из списка
+                int index = random.Next(Stikers.Count); // Выберите случайный URL из списка
 
-                using (var stream = System.IO.File.OpenRead(stickers[index]))
-                {
-                    var inputFile = new InputFileStream(stream);
-                    await botClient.SendStickerAsync(
-                        chatId: chatId,
-                        sticker: inputFile, // Отправьте случайный стикер в ответ
-                        cancellationToken: cancellationToken
-                    );
-                }
+                await botClient.SendStickerAsync(
+                    chatId: chatId,
+                    sticker: InputFile.FromUri(Stikers[index]), // Отправьте случайный стикер в ответ
+                    cancellationToken: cancellationToken
+                );
             }
 
 
