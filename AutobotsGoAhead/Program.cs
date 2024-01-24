@@ -170,6 +170,30 @@ namespace AutobotsGoAhead
             }
 
 
+            List<string> videoUrls = new List<string>
+            {
+             "https://drive.google.com/file/d/12noPCsUiadCo9LNuDxHmJHhDn6X238js/view?usp=drive_link",
+             "https://drive.google.com/file/d/1ck5X3qJeM24Sj6jKcI0knhEN4Mdu2mlZ/view?usp=drive_link",
+             "https://github.com/YourSneakyLiar/BoopBot/blob/main/enjoykin-kotletki-s-pyureskoy_(VIDEOMIN.NET).mp4",
+             "https://github.com/YourSneakyLiar/BoopBot/blob/main/enjoykin-lampovaya-nyasa_(VIDEOMIN.NET).mp4",
+             "https://github.com/YourSneakyLiar/BoopBot/blob/main/enjoykin-zato-ya-spas-kota-feat-nik-cernikov_(VIDEOMIN.NET).mp4",
+             "https://github.com/YourSneakyLiar/BoopBot/blob/main/pacan-sel-k-uspexu-ne-polucilos-ne-fartanulo_(VIDEOMIN.NET).mp4",
+                    // добавьте URL-адреса других видео...
+            };
+
+
+            if (message.Text == "Видосик")
+            {
+                Random random = new Random();
+                int index = random.Next(videoUrls.Count); // Выберите случайное видео из списка
+
+                await botClient.SendVideoAsync(
+                    chatId: chatId,
+                    video: InputFile.FromUri(videoUrls[index]), // Отправьте случайное видео в ответ
+                    supportsStreaming: true, // Включите потоковое воспроизведение
+                    cancellationToken: cancellationToken
+                );
+            }
 
 
 
