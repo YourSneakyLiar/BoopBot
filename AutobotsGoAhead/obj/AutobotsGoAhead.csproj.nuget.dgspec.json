@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elena\\source\\repos\\AutobotsGoAhead\\AutobotsGoAhead.csproj": {}
+    "C:\\Users\\elena\\Documents\\GitHub\\BoopBot\\AutobotsGoAhead\\AutobotsGoAhead.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elena\\source\\repos\\AutobotsGoAhead\\AutobotsGoAhead.csproj": {
+    "C:\\Users\\elena\\Documents\\GitHub\\BoopBot\\AutobotsGoAhead\\AutobotsGoAhead.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elena\\source\\repos\\AutobotsGoAhead\\AutobotsGoAhead.csproj",
+        "projectUniqueName": "C:\\Users\\elena\\Documents\\GitHub\\BoopBot\\AutobotsGoAhead\\AutobotsGoAhead.csproj",
         "projectName": "AutobotsGoAhead",
-        "projectPath": "C:\\Users\\elena\\source\\repos\\AutobotsGoAhead\\AutobotsGoAhead.csproj",
+        "projectPath": "C:\\Users\\elena\\Documents\\GitHub\\BoopBot\\AutobotsGoAhead\\AutobotsGoAhead.csproj",
         "packagesPath": "C:\\Users\\elena\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elena\\source\\repos\\AutobotsGoAhead\\obj\\",
+        "outputPath": "C:\\Users\\elena\\Documents\\GitHub\\BoopBot\\AutobotsGoAhead\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

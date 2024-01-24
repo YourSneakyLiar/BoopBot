@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OEvY4Q+AMG/bqCndnR+Buphqp2GzJ51qy33m7+c/4mUvLXm5WsIh1xG4IABsVUh33ttECbyv2QEHrl5QPi2+HA==",
+  "dgSpecHash": "eEiaBamKAUZDrYCdrwVSXWsGl6a4SI+8v0WAM2K5ModuAHzxZZwtgrN0Fxj37Nl5ypRN3mHz/WJIkbmTjjdR7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\elena\\source\\repos\\AutobotsGoAhead\\AutobotsGoAhead.csproj",
+  "projectFilePath": "C:\\Users\\elena\\Documents\\GitHub\\BoopBot\\AutobotsGoAhead\\AutobotsGoAhead.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elena\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\elena\\.nuget\\packages\\telegram.bot\\19.0.0\\telegram.bot.19.0.0.nupkg.sha512"
