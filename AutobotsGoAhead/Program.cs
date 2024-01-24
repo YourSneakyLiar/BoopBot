@@ -1,4 +1,6 @@
 ﻿using System.Threading;
+using System.IO;
+using System.Linq;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
@@ -129,20 +131,36 @@ namespace AutobotsGoAhead
                 );
             }
 
+
+
+
+
+
+
+
+
+
             if (message.Text == "Стикер")
             {
-                var stickerSet = await botClient.GetStickerSetAsync("BoopBot");
-                var stickers = stickerSet.Stickers;
+                var stickers = Directory.GetFiles("https://github.com/YourSneakyLiar/BoopBot", "*.webp"); // Загрузите все файлы .webp из репозитория
 
                 Random random = new Random();
                 int index = random.Next(stickers.Length); // Выберите случайный стикер из списка
 
-                await botClient.SendStickerAsync(
-                    chatId: chatId,
-                    sticker: InputFile.FromUri(stickers[index].FileId), // Отправьте случайный стикер в ответ
-                    cancellationToken: cancellationToken
-                );
+                using (var stream = System.IO.File.OpenRead(stickers[index]))
+                {
+                    var inputFile = new InputFileStream(stream);
+                    await botClient.SendStickerAsync(
+                        chatId: chatId,
+                        sticker: inputFile, // Отправьте случайный стикер в ответ
+                        cancellationToken: cancellationToken
+                    );
+                }
             }
+
+
+
+
 
 
         }
