@@ -6,9 +6,7 @@ using Telegram.Bot.Exceptions;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-
-
-
+using Telegram.Bot.Types.ReplyMarkups;
 
 namespace AutobotsGoAhead
 {
@@ -47,6 +45,9 @@ namespace AutobotsGoAhead
             Console.WriteLine($"Start listening for @{me.Username}");
             Console.ReadLine();
 
+
+
+
             cts.Cancel();
         
         }
@@ -70,9 +71,17 @@ namespace AutobotsGoAhead
 
             Console.WriteLine($"Received a'{messageText}' message in chat '{chatId}'.");
 
-            
 
 
+            if (message.Text == "Помощь")
+            {
+                await botClient.SendTextMessageAsync(
+                    chatId: chatId,
+                    text: "Привет для приветствия\n" + " ПИНГ для проверки работоспособности \n"+"Пуньк для рандомного ответа\n"+ " Мем, Видосик и Ты че для мема, видео и стикера\n ",
+                    cancellationToken: cancellationToken
+
+                    );
+            }
 
 
             if (message.Text == "ПИНГ")
@@ -146,8 +155,7 @@ namespace AutobotsGoAhead
             {
                 "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(1).webp",
                 "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(2).webp",
-                "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(3).webp",
-                "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(4).webp",
+                "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(3).webp",               
                 "https://raw.githubusercontent.com/YourSneakyLiar/BoopBot/main/sticker%20(5).webp",
                 
                
@@ -157,7 +165,7 @@ namespace AutobotsGoAhead
 
 
 
-            if (message.Text == "Стикер")
+            if (message.Text == "Ты че")
             {
                 Random random = new Random();
                 int index = random.Next(Stikers.Count); // Выберите случайный URL из списка
@@ -186,6 +194,47 @@ namespace AutobotsGoAhead
                  cancellationToken: cancellationToken
                 );
             }
+
+
+
+
+
+
+            if (message.Text == "ПОНГ?")
+            {
+                var keyboard = new InlineKeyboardMarkup(new[]
+                {
+        new [] // ряд кнопок
+        {
+            InlineKeyboardButton.WithCallbackData("ДА ПИНГ", "callback_data_ping"),
+            InlineKeyboardButton.WithCallbackData("ДА ПОНГ", "callback_data_pong"),
+            InlineKeyboardButton.WithCallbackData("ДА ПОНЬК", "callback_data_ponyk"),
+        }
+    });
+
+                await botClient.SendTextMessageAsync(
+                    chatId: chatId,
+                    text: "ПОНГ",
+                    replyMarkup: keyboard, // Добавьте кнопки к сообщению
+                    cancellationToken: cancellationToken
+                );
+            }
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
