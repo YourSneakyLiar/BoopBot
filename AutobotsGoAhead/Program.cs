@@ -188,8 +188,7 @@ namespace AutobotsGoAhead
 
                 await botClient.SendVideoAsync(
                  chatId: chatId,
-                 video: InputFile.FromUri("https://raw.githubusercontent.com/TelegramBots/book/master/src/docs/video-countdown.mp4"),
-                 thumbnail: InputFile.FromUri("https://raw.githubusercontent.com/TelegramBots/book/master/src/2/docs/thumb-clock.jpg"),
+                 video: InputFile.FromUri("https://rr5---sn-4g5edndd.googlevideo.com/videoplayback?expire=1706117531&ei=O_WwZdmiJIPN6dsPgOiEwAo&ip=185.253.160.7&id=o-ANMLNdOGVg2H-8uJlanZLmJYH1GG-C4ad5qIgULT3kEQ&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&mh=H0&mm=31%2C29&mn=sn-4g5edndd%2Csn-4g5e6nsz&ms=au%2Crdu&mv=m&mvi=5&pl=24&initcwndbps=163750&vprv=1&svpuc=1&mime=video%2Fmp4&cnr=14&ratebypass=yes&dur=10.890&lmt=1699289046021968&mt=1706095510&fvip=2&fexp=24007246&beids=24350017&c=ANDROID&txp=5318224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cvprv%2Csvpuc%2Cmime%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIgXd5qH_L4e8odbu54wW1BdVikHZ0GY6TFxNKkEUDMjjMCIQCaUoRAbbKwbRAShNYenGKBK3_H14JsZwQLoL6izf1lmQ%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AAO5W4owRQIhAOhJw-2xe0wf8bdRzquiOcDZuoGEpodGDgtO5XMuivUAAiAJORd97X90v7jGTH_oN9dVlKvMzQxwkQQ1odOKZ-pa7A%3D%3D&title=%D0%9B%D1%8F%20%D0%BB%D1%8F%20%D0%BB%D1%8F%20%D0%B1%D0%B0%D0%B1%D1%83%D1%88%D0%BA%D0%B0%20%F0%9F%91%B5"),              
                  supportsStreaming: true,
                  cancellationToken: cancellationToken
                 );
